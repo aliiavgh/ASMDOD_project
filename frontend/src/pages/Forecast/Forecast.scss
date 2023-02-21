@@ -1,0 +1,27 @@
+.Forecast {
+ .container{
+  h1 {
+   color: white;
+   font-weight: 800;
+   font-size: 40px;
+   text-align: center;
+   margin-top: 20px;
+  }
+ 
+  h3 {
+   font-weight: 400;
+   color: aliceblue;
+   text-align: center;
+   transform: translateY(+20px);
+   font-size: 18px;
+   margin: 30px;
+  }
+
+  .bbb {
+   svg {
+    transform: translateX(-290px);
+   }
+  }
+
+ }
+}

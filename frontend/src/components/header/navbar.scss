@@ -1,0 +1,38 @@
+.header {
+ padding: 40px 0;
+
+
+   .navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 100px;
+    margin-right: 100px;
+
+    ul {
+    display: flex;
+
+    li {
+     // display: inline-block;
+
+     list-style: none;
+     text-decoration: none;
+     margin: 0 20px;
+     transform: translateY(30px);
+
+     a, u {
+      color: white;
+      text-decoration: none;
+     }
+
+
+     a{
+      color: aliceblue;
+      text-decoration: none !important;
+     }
+   
+   }
+  }
+ 
+ } 
+}
