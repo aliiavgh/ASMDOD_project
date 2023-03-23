@@ -1,14 +1,13 @@
-import { Alert } from "@mui/material";
 import axios from 'axios';
-import React, { createContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { API_AUTH } from "../urls";
+import React, { createContext, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { API_AUTH } from '../urls';
 
 export const authContext = createContext();
 
 const AuthContextProvider = ({ children }) => {
-    const [user, setUser] = useState("");
-    const [error, setError] = useState("");
+    const [user, setUser] = useState('');
+    const [error, setError] = useState('');
 
     const navigate = useNavigate();
 
@@ -17,7 +16,7 @@ const AuthContextProvider = ({ children }) => {
             const res = await axios.post(`${API_AUTH}/register/`, formData);
             console.log(res);
             alert(`На вашу почту отправленна ссылка с подтверждением.`);
-            navigate("/login");
+            navigate('/login');
         } catch (e) {
             console.log(e);
             setError([e.response.data.detail]);
@@ -31,11 +30,11 @@ const AuthContextProvider = ({ children }) => {
             const res = await axios.post(`${API_AUTH}/login/`, formData);
             console.log(res.data);
 
-            localStorage.setItem("token", JSON.stringify(res.data));
-            localStorage.setItem("username", email);
+            localStorage.setItem('token', JSON.stringify(res.data));
+            localStorage.setItem('username', email);
 
             setUser(email);
-            navigate("/");
+            navigate('/');
         } catch (e) {
             console.log(e);
             setError([e.response.data.detail]);
@@ -45,7 +44,7 @@ const AuthContextProvider = ({ children }) => {
     };
 
     const checkAuth = async () => {
-        let token = JSON.parse(localStorage.getItem("token"));
+        let token = JSON.parse(localStorage.getItem('token'));
 
         try {
             const Auth = `Bearer ${token.access}`;
@@ -55,10 +54,10 @@ const AuthContextProvider = ({ children }) => {
             });
 
             localStorage.setItem(
-                "token",
+                'token',
                 JSON.stringify({ refresh: token.refresh, access: res.data.access })
             );
-            let userName = localStorage.getItem("username");
+            let userName = localStorage.getItem('username');
             setUser(userName);
         } catch (e) {
             console.log(e);
@@ -67,15 +66,8 @@ const AuthContextProvider = ({ children }) => {
         }
     };
 
-    function logout() {
-        localStorage.removeItem("token");
-        localStorage.removeItem("username");
-        setUser("");
-        navigate("/login");
-    }
-
     useEffect(() => {
-        if (localStorage.getItem("token")) {
+        if (localStorage.getItem('token')) {
             checkAuth();
         }
     }, []);
@@ -86,7 +78,6 @@ const AuthContextProvider = ({ children }) => {
         
         login,
         register,
-        logout,
         setUser,
     };
     return <authContext.Provider value={value}>{children}</authContext.Provider>;

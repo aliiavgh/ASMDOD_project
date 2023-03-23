@@ -9,7 +9,7 @@ import Box from '@mui/material/Box';
 import Container from "@mui/material/Container"
 
 
-const Diagnostics = () => {
+const DiagnosticsNeuralNetwork = () => {
 
  const filePicker = useRef(null)
 
@@ -34,7 +34,7 @@ const Diagnostics = () => {
 
  const formData = new FormData();
   formData.append('picture', selectedFile);
-  const config = {headers: {'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc2NjI4Nzk2LCJpYXQiOjE2NzY1OTI3OTYsImp0aSI6IjA3YjQ4ZTA3Y2EzZDRmMWM4NmNiNzVmMmRhMjhhNGFjIiwidXNlcl9pZCI6NX0.lsZCVmdmyqB4ZLwzIhn6hj8DJBCZDSB8YFpBiIgI_bU'},}
+  const config = {headers: {'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc4NzQwNDUzLCJpYXQiOjE2Nzg3MDQ0NTMsImp0aSI6ImVlZmMyNDA2YjY1NTQ3NjRiMmE3ODllNDJkMDlmMjgxIiwidXNlcl9pZCI6NX0.pUt9ji7c-X9MFIAotrDGm2jrCkq1jJp7CKBJwoegeyU'},}
   const url = 'http://127.0.0.1:8000/api/v1/diagnostics/'
   axios.post(url, formData, config).then((resp) => setResult(resp.data))
  };
@@ -52,7 +52,7 @@ const Diagnostics = () => {
   const formData = new FormData();
   formData.append('form_key', result.form_key)
   formData.append('picture', selectedFile)
-  const config = {headers: {'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc2NjI4Nzk2LCJpYXQiOjE2NzY1OTI3OTYsImp0aSI6IjA3YjQ4ZTA3Y2EzZDRmMWM4NmNiNzVmMmRhMjhhNGFjIiwidXNlcl9pZCI6NX0.lsZCVmdmyqB4ZLwzIhn6hj8DJBCZDSB8YFpBiIgI_bU'},}
+  const config = {headers: {'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc4NzQwNDUzLCJpYXQiOjE2Nzg3MDQ0NTMsImp0aSI6ImVlZmMyNDA2YjY1NTQ3NjRiMmE3ODllNDJkMDlmMjgxIiwidXNlcl9pZCI6NX0.pUt9ji7c-X9MFIAotrDGm2jrCkq1jJp7CKBJwoegeyU'},}
   axios.post('http://127.0.0.1:8000/api/v1/diagnostics/result/', formData, config).then((res) => setResponse( res.data.Есть))
  };
 
@@ -108,4 +108,4 @@ const Diagnostics = () => {
  );
 };
 
-export default Diagnostics;
+export default DiagnosticsNeuralNetwork;

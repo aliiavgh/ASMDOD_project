@@ -3,10 +3,10 @@ import { Link } from'react-router-dom'
 // import Button from '../../components/buttons/index';
 import Button from "@mui/material/Button";
 
-import './Home.scss';
+import './Banner.scss';
 
 
-const Home = () => {
+const Banner = () => {
     return (
         <div className='home'>
             <div className='container'>
@@ -36,4 +36,4 @@ const Home = () => {
     );
 }
 
-export default Home;
+export default Banner;

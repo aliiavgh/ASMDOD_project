@@ -16,9 +16,11 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
  <Router>
     <React.StrictMode>
-     <Header />
-     <App />
-     <Footer />
+     <AuthContextProvider>
+      <Header />
+      <App />
+      <Footer />
+     </AuthContextProvider>
    </React.StrictMode>
 </Router>
 );

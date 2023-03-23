@@ -8,7 +8,7 @@ import axios from "axios";
 
 import './Forecast.scss'
 
-const Forecast = () => {
+const ForecastModel = () => {
 
  const [graphic, setGraphic] = useState()
 
@@ -66,7 +66,7 @@ const Forecast = () => {
            display: "flex",
            alignItems: "center",
            justifyContent: "center",
-           mr: 40,
+           mr: 60,
            my:11,
            backgroundColor: "none",
            height: "540px",
@@ -107,4 +107,4 @@ const Forecast = () => {
  )
 }
 
-export default Forecast;
+export default ForecastModel;
