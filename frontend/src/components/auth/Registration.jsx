@@ -100,10 +100,8 @@ export default function Register() {
 								value={email}
 								onChange={(e) => setEmail(e.target.value)}
         inputProps={{ style: { fontFamily: 'nunito', color: 'white' } }}
-        sx = {{backgroundColor: '#594067', "& .MuiInputLabel-root": {color: 'white'},//styles the label
-         "& .MuiOutlinedInput-root": {
-         "& > fieldset": { borderColor: "#594067" },
-         }}}
+        sx = {{backgroundColor: '#594067', "& .MuiInputLabel-root": {color: 'white'},
+         }}
 							/>
 							<TextField
 								margin="normal"

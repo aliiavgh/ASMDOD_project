@@ -7,8 +7,9 @@ import Forecast from './pages/ForecasrPage';
 import Diagnostics from './pages/DiagnosticsPage';
 import DiagnosticsNeuralNetwork from './components/DiagnosisNeuralNetwork/DiagnosticsNeuralNetwork';
 import ForecastModel from './components/ForecastModel/ForecastModel';
-import Profile from './pages/PersonalArea';
+import Profile from './components/profile/PersonalArea';
 import Home from './pages/HomePage';
+import Patients from './components/profile/Patients';
 
 
 const MainRoutes = () => {
@@ -17,6 +18,7 @@ const MainRoutes = () => {
    <Route path='/register' element={<Register />} />
    <Route path='/login' element={<Login />} />
    <Route path='/profile' element={<Profile />} />
+   <Route path='/profile/history' element={<Patients />} />
    <Route path='/' element={<Home />} />
    <Route path='/404' element={<NotFound />} />
    <Route path='/forecast' element={<ForecastModel />} />

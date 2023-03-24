@@ -30,3 +30,6 @@ class Patient(models.Model):
     date_detection = models.DateField(auto_now_add=True)
 
 
+    def __str__(self) -> str:
+        return f'{self.first_name} - {self.last_name} - {self.date_detection}'
+

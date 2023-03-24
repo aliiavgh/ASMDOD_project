@@ -34,7 +34,8 @@ const DiagnosticsNeuralNetwork = () => {
 
  const formData = new FormData();
   formData.append('picture', selectedFile);
-  const config = {headers: {'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc4NzQwNDUzLCJpYXQiOjE2Nzg3MDQ0NTMsImp0aSI6ImVlZmMyNDA2YjY1NTQ3NjRiMmE3ODllNDJkMDlmMjgxIiwidXNlcl9pZCI6NX0.pUt9ji7c-X9MFIAotrDGm2jrCkq1jJp7CKBJwoegeyU'},}
+  const config = {headers: {'Authorization': 
+  'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc5NjU2OTUzLCJpYXQiOjE2Nzk2MjA5NTMsImp0aSI6IjJiN2I0ZmVkYWFjMzQxZjA4YzE5NTJmNGRlNjAzNGMwIiwidXNlcl9pZCI6OX0.CqgblqhKmIrb1WB9yv_0ClGB0H6c0oTL66LI_0rv--M'},}
   const url = 'http://127.0.0.1:8000/api/v1/diagnostics/'
   axios.post(url, formData, config).then((resp) => setResult(resp.data))
  };
@@ -52,7 +53,8 @@ const DiagnosticsNeuralNetwork = () => {
   const formData = new FormData();
   formData.append('form_key', result.form_key)
   formData.append('picture', selectedFile)
-  const config = {headers: {'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc4NzQwNDUzLCJpYXQiOjE2Nzg3MDQ0NTMsImp0aSI6ImVlZmMyNDA2YjY1NTQ3NjRiMmE3ODllNDJkMDlmMjgxIiwidXNlcl9pZCI6NX0.pUt9ji7c-X9MFIAotrDGm2jrCkq1jJp7CKBJwoegeyU'},}
+  const config = {headers: {'Authorization': 
+  'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc5NjU2OTUzLCJpYXQiOjE2Nzk2MjA5NTMsImp0aSI6IjJiN2I0ZmVkYWFjMzQxZjA4YzE5NTJmNGRlNjAzNGMwIiwidXNlcl9pZCI6OX0.CqgblqhKmIrb1WB9yv_0ClGB0H6c0oTL66LI_0rv--M'},}
   axios.post('http://127.0.0.1:8000/api/v1/diagnostics/result/', formData, config).then((res) => setResponse( res.data.Есть))
  };
 
